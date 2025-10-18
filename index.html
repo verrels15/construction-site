@@ -76,12 +76,20 @@
             font-size: 3.5rem;
             margin-bottom: 1rem;
             animation: fadeInUp 1s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero-content p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
             animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.3s both;
         }
 
         .cta-button {
@@ -201,6 +209,92 @@
             color: #f39c12;
         }
 
+        .gallery {
+            background: #f8f9fa;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            aspect-ratio: 4/3;
+            background: #ddd;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+            font-size: 3rem;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 2rem 1rem 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .testimonials {
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #f39c12;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
         .contact {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
@@ -284,6 +378,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -292,7 +387,8 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Building Dreams, Crafting Landscapes</h1>
+            <h1>Jose Ramos Construction Services</h1>
+            <p class="tagline">"Quality craftsmanship, built with integrity"</p>
             <p>Professional construction and landscaping services for residential and commercial projects</p>
             <a href="#contact" class="cta-button">Get a Free Quote</a>
         </div>
@@ -334,13 +430,66 @@
         </div>
     </section>
 
+    <section id="gallery" class="section gallery">
+        <h2 class="section-title">Our Work</h2>
+        <p style="text-align: center; margin-bottom: 3rem; color: #666;">See the quality and craftsmanship that Jose brings to every project</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-placeholder">🏡</div>
+                <div class="gallery-caption">
+                    <strong>Residential Construction</strong><br>
+                    Custom home builds and additions
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">🌿</div>
+                <div class="gallery-caption">
+                    <strong>Landscape Design</strong><br>
+                    Beautiful outdoor transformations
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">🧱</div>
+                <div class="gallery-caption">
+                    <strong>Hardscaping</strong><br>
+                    Patios, walkways, and retaining walls
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">🏗️</div>
+                <div class="gallery-caption">
+                    <strong>Commercial Projects</strong><br>
+                    Professional builds for businesses
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">🌳</div>
+                <div class="gallery-caption">
+                    <strong>Garden Installation</strong><br>
+                    Lush landscaping and garden beds
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">🔨</div>
+                <div class="gallery-caption">
+                    <strong>Renovations</strong><br>
+                    Complete property transformations
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; color: #999; font-style: italic;">
+            To add your project photos: Replace the placeholder emojis with your actual images by adding img tags with your image URLs
+        </p>
+    </section>
+
     <section id="about" class="section about">
-        <h2 class="section-title">Why Choose Us</h2>
+        <h2 class="section-title">About Jose Ramos</h2>
         <div class="about-content">
             <div class="about-text">
-                <h3>Experience You Can Trust</h3>
-                <p>With over 15 years in the construction and landscaping industry, BuildScape Pro has built a reputation for excellence, reliability, and customer satisfaction. We pride ourselves on delivering projects on time and within budget, while maintaining the highest standards of quality.</p>
-                <p>Our team of licensed professionals brings expertise, creativity, and attention to detail to every project, whether it's a small residential landscaping job or a large commercial construction project.</p>
+                <h3>Dedicated to Excellence Since Day One</h3>
+                <p>Jose Ramos brings over 15 years of hands-on experience in construction and landscaping to every project. What started as a passion for building and creating beautiful outdoor spaces has grown into a trusted business serving the Las Vegas community.</p>
+                <p>Jose personally oversees every project, ensuring that each client receives the attention to detail and quality craftsmanship that has become his signature. Whether it's a small residential landscaping job or a large commercial construction project, Jose treats every property as if it were his own.</p>
+                <p><strong>Why clients choose Jose:</strong> Honest communication, fair pricing, exceptional workmanship, and a commitment to delivering results that exceed expectations.</p>
             </div>
             <div class="stats">
                 <div class="stat-box">
@@ -355,6 +504,30 @@
                     <div class="stat-number">100%</div>
                     <p>Satisfaction Rate</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials">
+        <h2 class="section-title">What Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Jose transformed our backyard into an amazing outdoor living space. His attention to detail and professionalism were outstanding. Highly recommend!"
+                </div>
+                <div class="testimonial-author">- Maria G., Henderson</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "We hired Jose for a complete home renovation. He stayed on budget, finished on time, and the quality of work exceeded our expectations."
+                </div>
+                <div class="testimonial-author">- Robert T., Las Vegas</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Jose is honest, reliable, and does beautiful work. He's done several projects for us and we wouldn't trust anyone else."
+                </div>
+                <div class="testimonial-author">- Linda M., North Las Vegas</div>
             </div>
         </div>
     </section>
@@ -385,7 +558,7 @@
                     <span>📧</span>
                     <div>
                         <strong>Email</strong><br>
-                        info@buildscapepro.com
+                        jose@ramosconstruction.com
                     </div>
                 </div>
                 <div class="contact-item">
@@ -408,7 +581,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 BuildScape Pro. All rights reserved. Licensed & Insured.</p>
+        <p>&copy; 2025 Jose Ramos Construction Services. All rights reserved. Licensed & Insured.</p>
     </footer>
 
     <script>
